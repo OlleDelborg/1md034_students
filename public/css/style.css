@@ -3,15 +3,12 @@
 
 body {
     font-family: "Droid Serif", sans-serif;
-    font-size: 12pt;
-}
+    font-size: 150%;
+    color: #000000;
+}    
 
-a, strong, em {
-    color: ##ffc0cb;
-}
 
-p.info,
-#login p {
-    width: 80%;
-    margin: 1vw auto;
+.ingredients {
+    font-weight: bold;
+    color: #494C53;
 }
