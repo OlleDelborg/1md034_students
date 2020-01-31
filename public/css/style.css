@@ -9,6 +9,27 @@ body {
 
 
 .ingredients {
-    font-weight: bold;
     color: #494C53;
+}
+
+.allergy {}
+
+#allergies {
+    font-weight: bold;
+    color: #000000;
+}
+
+
+button:hover {
+    color: #8D021F;
+    background-color: #D3D3D3;
+}
+
+#customer {
+    background-color: #111111;
+    color: #FFFFFF;
+}
+
+#burgers {
+
 }

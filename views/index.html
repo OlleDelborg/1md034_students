@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Burger Town</title>
-        <meta charset="utf-8"/>
-	 <link rel="stylesheet" type="text/css" href="../css/style.css">
-    </head>
-    <body>
-      <main>
-	<h1>Welcome to Burger Town</h1>
+  <head>
+    <title>Steamed Hams</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Steamed Hams</h1>
 
-	<section>
-	  <h2>Select your Burger
-	     <span id="selecting">selecting </span>
-	  </h2>
-	  
-	  <table>
-	    <thead>
-              <tr>
-		<th><h2>FIRE burger</h2></th>
-		<th><h2>TURKEY burger<h2></th>
-		<th><h2>double w/ CHEESE<h2></th>
-              </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-		<td><img class="pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="Span" title="Another in-line element" width="300"></td>
-		<td><img class="pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="Span" title="Another in-line element" width="270"></td>
-		<td><img class="pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Another in-line element" width="300"></td>
-              </tr>
-
-	      <tr class="ingredients">
-		<td>
-		  <ul>
-		    <li>773 kcal</li>
-		    <li>Vegan</li>
-		    <li>Gluten free</li>
-		    <li>Sun dried tomatoes</li>
-		    <li>Onions (non-optional)</li>
-		    <li>Contains actual fire from hell</li>
-		  </ul>
-		</td>	  		
-		  
-		<td>
-		  <ul class="ingredients">
-		    <li>729 kcal</li>
-		    <li>NO ONIONS</li>
-		    <li>Gluten free</li>
-		    <li>Contains actual turkey from hell</li>
-		  </ul>
-		</td>	  		
-              
-		<td>
-		  <ul class="ingredients">
-		    <li>995 kcal</li>
-		    <li>Meat from homegrown cows</li>
-		    <li>Gluten filled</li>
-		    <li>Fire dried tomatoes</li>
-		    <li>Onions (optional)</li>
-		    <li>Contains actual cheese from hell</li>
-		  </ul>
-		</td>	  		
-              </tr>
-	      
-	    </tbody>
-	  </table>
-	</section>
-  	
-	<section>
-	  <h2>Customer Information </h2>  
-	</section>
+      <section id="burgers">
+	<h2>Select your Steamed Ham</h2>
 	
-	<section id="contact">
+	<table>
+	  <thead>
+            <tr>
+	      <th><h2>FIRE burger</h2></th>
+	      <th><h2>TURKEY burger<h2></th>
+	      <th><h2>double w/ CHEESE<h2></th>
+            </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td><img class="pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="Span" title="Another in-line element" width="300"></td>
+	      <td><img class="pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="Span" title="Another in-line element" width="270"></td>
+	      <td><img class="pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Another in-line element" width="300"></td>
+            </tr>
+
+	    <tr class="ingredients">
+	      <td>
+		<ul>
+		  <li>773 kcal</li>
+		  <div class="allergy">
+		    <li><span id="allergies">Vegan</span></li>
+		    <li><span id="allergies">Gluten free</span></li>
+		  </div>
+		  <li>Sun dried tomatoes</li>
+		  <li>Onions (non-optional)</li>
+		  <li>Contains actual fire from hell</li>
+		</ul>
+	      </td>	  		
+	      
+	      <td>
+		<ul>
+		  <li>729 kcal</li>
+		  <li>NO ONIONS</li>
+		  <div class="allergy">
+		    <li><span id="allergies">Gluten free </span></li>
+		  </div>
+		  <li>Contains actual turkey from hell</li>
+		</ul>
+	      </td>	  		
+              
+	      <td>
+		<ul>
+		  <li>995 kcal</li>
+		  <li>Meat from homegrown cows</li>
+		  <div class="allergy">
+		    <li><span id="allergies">Gluten packed </span></li>
+		  </div>
+		  <li>Fire dried tomatoes</li>
+		  <li>Onions (optional)</li>
+		  <li>Contains actual cheese from hell</li>
+		</ul>
+	      </td>	  		
+            </tr>
+	    
+	  </tbody>
+	</table>
+      </section>
+      
+      <section * id="customer">
+	<h2>Customer Information </h2>  
+	<section>
           <form>
 	    <p>
 	      <label for="name">Full Name</label><br>
@@ -108,20 +110,20 @@
 	</section>
 
 	<section>
-	  <h2>Gender </h2>
+	  <label for="Gender">Gender</label><br />
 	  <label class="radio">
 	    <input type="radio" name="male">
 	    Male
 	  </label>
 	  <label class="radio">
-	    <input type="radio" name="female">
-	    Female
+	  <input type="radio" name="female">
+	  Female
 	  </label>
 	  <label class="radio">
 	    <input type="radio" name="rns">
 	    Rather not Specify
 	  </label>
-
+	  
 	</section>
 
 	<section>
@@ -129,8 +131,8 @@
 	    type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info
 	  </button>    
 	</section>
-	
-      </main>
+      </section>
+    </main>
 
       <footer>
 	<p>Copyright 2020 Not Really, though</p>
