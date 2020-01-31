@@ -7,67 +7,61 @@
   </head>
   <body>
     <main>
-      <h1>Steamed Hams</h1>
-
+      
+      <section class= "header">
+	<img class="steamedheaderimage" src ="https://www.onlygfx.com/wp-content/uploads/2017/06/banner-drawing-1.png">
+	<h1 class="steamedheader">Steamed Hams</h1>
+      </section>
+      
       <section id="burgers">
+	
 	<h2>Select your Steamed Ham</h2>
 	
-	<table>
-	  <thead>
-            <tr>
-	      <th><h2>FIRE burger</h2></th>
-	      <th><h2>TURKEY burger<h2></th>
-	      <th><h2>double w/ CHEESE<h2></th>
-            </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td><img class="pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="Span" title="Another in-line element" width="300"></td>
-	      <td><img class="pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="Span" title="Another in-line element" width="270"></td>
-	      <td><img class="pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Another in-line element" width="300"></td>
-            </tr>
+	<div class="wrapper">
+	  <div class="a">
+	    <h2>FIRE ham</h2>
+	    <img class "pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="FIRE" title="fireburger" width="300">
+	    <ul class="ingredients">
+	      <li>773 kcal</li>
+	      <div class="allergy">
+		<li><span id="allergies">Vegan</span></li>
+		<li><span id="allergies">Gluten</span> free</li>
+	      </div>
+	      <li>Sun dried tomatoes</li>
+	      <li>Onions (non-optional)</li>
+	      <li>Contains actual fire from hell</li>
+	    </ul>
+	  </div>
 
-	    <tr class="ingredients">
-	      <td>
-		<ul>
-		  <li>773 kcal</li>
-		  <div class="allergy">
-		    <li><span id="allergies">Vegan</span></li>
-		    <li><span id="allergies">Gluten free</span></li>
-		  </div>
-		  <li>Sun dried tomatoes</li>
-		  <li>Onions (non-optional)</li>
-		  <li>Contains actual fire from hell</li>
-		</ul>
-	      </td>	  		
-	      
-	      <td>
-		<ul>
-		  <li>729 kcal</li>
-		  <li>NO ONIONS</li>
-		  <div class="allergy">
-		    <li><span id="allergies">Gluten free </span></li>
-		  </div>
-		  <li>Contains actual turkey from hell</li>
-		</ul>
-	      </td>	  		
-              
-	      <td>
-		<ul>
-		  <li>995 kcal</li>
-		  <li>Meat from homegrown cows</li>
-		  <div class="allergy">
-		    <li><span id="allergies">Gluten packed </span></li>
-		  </div>
-		  <li>Fire dried tomatoes</li>
-		  <li>Onions (optional)</li>
-		  <li>Contains actual cheese from hell</li>
-		</ul>
-	      </td>	  		
-            </tr>
-	    
-	  </tbody>
-	</table>
+	  <div class="b">
+	    <h2>TURKEY ham</h2>
+	    <img class "pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="TURKEY" title="turkeyham" width="300">
+	    <ul class="ingredients">
+	    <li>729 kcal</li>
+	    <li>NO ONIONS</li>
+	    <div class="allergy">
+	      <li><span id="allergies">Gluten</span> free</li>
+	    </div>
+	    <li>Contains actual turkey from hell</li>	  
+	    </ul>
+	  </div>
+
+	  <div class="c">
+	    <h2>double w/ CHEESE</h2>
+	    <img class "pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Cheese" width="300">
+	    <ul class="ingredients">
+	    <li>995 kcal</li>
+	    <li>Meat from homegrown cows</li>
+	    <div class="allergy">
+	      <li><span id="allergies">Gluten PACKED</span></li>
+	    </div>
+	    <li>Fire dried tomatoes</li>
+	    <li>Onions (optional)</li>
+	    <li>Contains actual cheese from hell</li>
+	    </ul>
+	  </div>
+	</div>
+	
       </section>
       
       <section * id="customer">
@@ -112,15 +106,15 @@
 	<section>
 	  <label for="Gender">Gender</label><br />
 	  <label class="radio">
-	    <input type="radio" name="male">
+	    <input type="radio" id="male" name="Gender">
 	    Male
 	  </label>
 	  <label class="radio">
-	  <input type="radio" name="female">
+	  <input type="radio" id="female" name="Gender">
 	  Female
 	  </label>
 	  <label class="radio">
-	    <input type="radio" name="rns">
+	    <input type="radio" id="rns" name="Gender">
 	    Rather not Specify
 	  </label>
 	  
@@ -135,7 +129,7 @@
     </main>
 
       <footer>
-	<p>Copyright 2020 Not Really, though</p>
+	<p>Copyright 2020: Not Really, though</p>
       </footer>
     </body>
 </html>
