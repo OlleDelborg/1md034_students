@@ -1,3 +1,6 @@
 const vm = new Vue({
-    //Here comes the optional elements of the Vue object
+  el: '#myID',
+  data: {
+    arbitraryVariableName: 'Select a Burger'
+  }
 })

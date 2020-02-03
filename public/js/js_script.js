@@ -1,4 +1,3 @@
-
 function menuItem(name, kcal, allergies, src) {
     this.name = name;
     this.kcal = kcal;
@@ -21,3 +20,5 @@ console.log(burger2.getBurger());
 console.log(burger3.getBurger());
 console.log(burger4.getBurger());
 console.log(burger5.getBurger());
+
+document.getElementById("myID").innerHTML = "Select a Burger";
