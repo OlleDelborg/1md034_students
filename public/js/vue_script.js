@@ -1,3 +1,4 @@
+/*
 window.onload = function () {
     const vm = new Vue({
 	el: '#IDitem',
@@ -11,3 +12,4 @@ window.onload = function () {
 	}
     });
 }
+*/
