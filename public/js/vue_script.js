@@ -1,6 +1,6 @@
 window.onload = function () {
     const vm = new Vue({
-	el: '#myID',
+	el: '#IDitem',
 	data: {
 	    IDitem: 'Välj en burgare'
 	    burger1: burger1.getBurger(),

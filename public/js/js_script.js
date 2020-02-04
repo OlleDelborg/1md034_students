@@ -17,19 +17,39 @@ let burger5 = new menuItem('BBQ', '800', 'Lactose', 'https://encrypted-tbn0.gsta
 
 
 /*
-const vm = new Vue({
+const vm = new Vue({x
   el: '#myID',
   data: {
     arbitraryVariableName: 'Välj en burgare'
   }
 })
 */
+
+var menu = [ burger1, burger2, burger3, burger4, burger5 ];
+var i = 0;
+for (i = 0; i < menu.length; i++) {
+  let listItem = document.createElement("li");
+  let listItemAllergy = document.createElement("ul");
+        let burgerList = document.createTextNode(menu[i].name);
+        	listItem.appendChild(burgerList);
+          document.getElementById("myloop").appendChild(listItem);
+          if(menu[i].allergies != "none")
+          {
+          		let listAllergy = document.createTextNode(menu[i].allergies);
+        			listItemAllergy.appendChild(listAllergy);
+        			document.getElementById("myloop").appendChild(listItemAllergy);  		
+          }
+        
+					
+}
+
+/*
 document.getElementById("burger1").innerHTML = burger1.getBurger();
 document.getElementById("burger2").innerHTML = burger2.getBurger();
 document.getElementById("burger3").innerHTML = burger3.getBurger();
 document.getElementById("burger4").innerHTML = burger4.getBurger();
 document.getElementById("burger5").innerHTML = burger5.getBurger();
-
+*/
 
 console.log(burger1.getBurger());
 console.log(burger2.getBurger());
