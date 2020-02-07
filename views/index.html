@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
+    <script src ="https://vuejs.org/js/vue.js"></script>
     <title>Steamed Hams</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -14,10 +18,53 @@
       </section>
       
       <section id="burgers">
+
+	<div id="myID">
+	  <h1>{{IDItem}}</h1>
+	</div>
+
+	<ol id="myloop">
+	</ol>
 	
 	<h2>Select your Steamed Ham</h2>
-	
+
 	<div class="wrapper">
+
+	  <div id="fstBurger" class="box a">
+	    <h2>{{Name1}}</h2>
+	    <img class="pictures" v-bind:src="picture1" width="300">
+	    <ul id="infoBurger1">
+	      <li v-for="item1 in info1">
+		{{item1}}
+	      </li>
+	    </ul>
+	  </div>
+	  
+	  
+	  <div id="sndBurger" class="box b">
+	     <h2>{{Name2}}</h2>
+	    <img class="pictures" v-bind:src="picture2" width="300">
+	    <ul id="infoBurger2">
+	      <li v-for="item2 in info2">
+		{{item2}}
+	      </li>
+	    </ul>
+	  </div>
+
+	  <div id="trdBurger" class="box c">
+	    <h2>{{Name3}}</h2>
+	    <img class="pictures" v-bind:src="picture3" width="300">
+	    <ul id="infoBurger3">
+	      <li v-for="item3 in info3">
+		{{item3}}
+	      </li>
+	    </ul>
+	  </div>
+
+	</div>
+
+	
+	<!--div class="wrapper">
 	  <div class="a">
 	    <h2>FIRE ham</h2>
 	    <img class "pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="FIRE" title="fireburger" width="300">
@@ -60,7 +107,7 @@
 	    <li>Contains actual cheese from hell</li>
 	    </ul>
 	  </div>
-	</div>
+	</div!-->
 	
       </section>
       
