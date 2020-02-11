@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="js/vue_script.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
     <title>Steamed Hams</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
-    <main>
+    <main id="clickable">
       
       <section class= "header">
 	<img class="steamedheaderimage" src ="https://www.onlygfx.com/wp-content/uploads/2017/06/banner-drawing-1.png">
@@ -17,54 +19,103 @@
       </section>
       
       <section id="burgers">
+
+	<div id="myID">
+	  <h1>{{IDItem}}</h1>
+	</div>
+
+	<ol id="myloop">
+	</ol>
 	
 	<h2>Select your Steamed Ham</h2>
 	
-	<div class="wrapper">
-	  <div class="a">
-	    <h2>FIRE ham</h2>
-	    <img class "pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="FIRE" title="fireburger" width="300">
-	    <ul class="ingredients">
-	      <li>773 kcal</li>
-	      <div class="allergy">
-		<li><span id="allergies">Vegan</span></li>
-		<li><span id="allergies">Gluten</span> free</li>
+	  <div class="wrapper" id="wrapper">
+	    
+	    <div id="fstBurger" class="box a">
+	      <h2>{{Name1}}</h2>
+	      <img class="pictures" v-bind:src="picture1" width="300">
+	      <ul id="infoBurger1">
+		<li v-for="item1 in info1">
+		  {{item1}}
+		</li>
+	      </ul>
+	      <input type="checkbox" id="checkbox1">
+	      <label for="burgers1">Check it!</label>
+	    </div>
+	    
+	    
+	    <div id="sndBurger" class="box b">
+	      <h2>{{Name2}}</h2>
+	      <img class="pictures" v-bind:src="picture2" width="300">
+	      <ul id="infoBurger2">
+		<li v-for="item2 in info2">
+		  {{item2}}
+		</li>
+	      </ul>
+	      <input type="checkbox" id="checkbox2">
+	      <label for="burgers2">Check it!</label>
+	    </div>
+
+	    <div id="trdBurger" class="box c">
+	      <h2>{{Name3}}</h2>
+	      <img class="pictures" v-bind:src="picture3" width="300">
+	      <ul id="infoBurger3">
+		<li v-for="item3 in info3">
+		  {{item3}}
+		</li>
+	      </ul>
+	      <input type="checkbox" id="checkbox3">
+	      <label for="burgers3">Check it!</label>
+	    </div>
+	    
+	  </div>
+
+	  
+	  <!--div class="wrapper">
+	      <div class="a">
+		<h2>FIRE ham</h2>
+		<img class "pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="FIRE" title="fireburger" width="300">
+		<ul class="ingredients">
+		  <li>773 kcal</li>
+		  <div class="allergy">
+		    <li><span id="allergies">Vegan</span></li>
+		    <li><span id="allergies">Gluten</span> free</li>
+		  </div>
+		  <li>Sun dried tomatoes</li>
+		  <li>Onions (non-optional)</li>
+		  <li>Contains actual fire from hell</li>
+		</ul>
 	      </div>
-	      <li>Sun dried tomatoes</li>
-	      <li>Onions (non-optional)</li>
-	      <li>Contains actual fire from hell</li>
-	    </ul>
-	  </div>
 
-	  <div class="b">
-	    <h2>TURKEY ham</h2>
-	    <img class "pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="TURKEY" title="turkeyham" width="300">
-	    <ul class="ingredients">
-	    <li>729 kcal</li>
-	    <li>NO ONIONS</li>
-	    <div class="allergy">
-	      <li><span id="allergies">Gluten</span> free</li>
-	    </div>
-	    <li>Contains actual turkey from hell</li>	  
-	    </ul>
-	  </div>
+	      <div class="b">
+		<h2>TURKEY ham</h2>
+		<img class "pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="TURKEY" title="turkeyham" width="300">
+		<ul class="ingredients">
+		  <li>729 kcal</li>
+		  <li>NO ONIONS</li>
+		  <div class="allergy">
+		    <li><span id="allergies">Gluten</span> free</li>
+		  </div>
+		  <li>Contains actual turkey from hell</li>	  
+		</ul>
+	      </div>
 
-	  <div class="c">
-	    <h2>double w/ CHEESE</h2>
-	    <img class "pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Cheese" width="300">
-	    <ul class="ingredients">
-	    <li>995 kcal</li>
-	    <li>Meat from homegrown cows</li>
-	    <div class="allergy">
-	      <li><span id="allergies">Gluten PACKED</span></li>
-	    </div>
-	    <li>Fire dried tomatoes</li>
-	    <li>Onions (optional)</li>
-	    <li>Contains actual cheese from hell</li>
-	    </ul>
-	  </div>
-	</div>
-	
+	      <div class="c">
+		<h2>double w/ CHEESE</h2>
+		<img class "pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Cheese" width="300">
+		<ul class="ingredients">
+		  <li>995 kcal</li>
+		  <li>Meat from homegrown cows</li>
+		  <div class="allergy">
+		    <li><span id="allergies">Gluten PACKED</span></li>
+		  </div>
+		  <li>Fire dried tomatoes</li>
+		  <li>Onions (optional)</li>
+		  <li>Contains actual cheese from hell</li>
+		</ul>
+	      </div>
+	</div!-->
+	  
       </section>
       
       <section * id="customer">
@@ -73,22 +124,22 @@
           <form>
 	    <p>
 	      <label for="name">Full Name</label><br>
-	      <input type="text" id="name" name="fn" required="required" placeholder="Name" />
+	      <input v-model="name" type="text" id="name" name="fn" required="required" placeholder="Name" />
 	    </p>
 
 	    <p>
 	      <label for="streetaddress">Delivery Address</label><br>
-	      <input type="text" id="address" name="ln" placeholder="Street name" />
+	      <input v-model="address" type="text" id="address" name="ln" required="required" placeholder="Street name" />
 	    </p>
 
 	    <p>
 	      <label for="House number">House</label><br>
-	      <input type="text" id="housenumber" name="ln" placeholder="House number" />
+	      <input v-model="house" type="text" id="house" name="ln" required="required" placeholder="House number" />
 	    </p>
 	    
 	    <p>
 	      <label for="emailaddress">E-mail</label><br>
-	      <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+	      <input v-model="email" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
 	    </p>
 	    
 	  </form>
@@ -97,42 +148,56 @@
 	  
 	  <p>
 	    <label for="Payment">Payment method</label><br />
-	    <select id="payment" name="pmethod">
-              <option>Credit Card</option>
-              <option>Swish</option>
-              <option>Invoice</option>
-              <option>Klarna</option>
+	    <select v-model="pay" id="pay" name="pay">
+	      <option>Credit Card</option>
+	      <option>Swish</option>
+	      <option>Invoice</option>
+	      <option>Klarna</option>
 	    </select>
 	  </p>
 	</section>
 
 	<section>
-	  <label for="Gender">Gender</label><br />
-	  <label class="radio">
-	    <input type="radio" id="male" name="Gender">
-	    Male
-	  </label>
-	  <label class="radio">
-	  <input type="radio" id="female" name="Gender">
-	  Female
-	  </label>
-	  <label class="radio">
-	    <input type="radio" id="rns" name="Gender">
-	    Rather not Specify
-	  </label>
-	  
+	  <div id="Genders">
+	    <label for="Gender">Gender</label><br />
+	    <label class="radio">
+	      <input v-model="gender" value="male" type="radio" id="male" name="Gender">
+	      Male
+	    </label>
+	    <label class="radio">
+	      <input v-model="gender" value="female" type="radio" id="female" name="Gender">
+	      Female
+	    </label>
+	    <label class="radio">
+	      <input v-model="gender" value="rns" type="radio" id="rns" name="Gender">
+	      Rather not Specify
+	    </label>
+	  </div>
 	</section>
 
 	<section>
-	  <button
-	    type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info
-	  </button>    
+
+	  <div id="orders">  
+	    <button v-on:click="markDone()" id="ordering" type="submit">Klart</button>
+	    <p >{{name}}</p>
+	    <p >{{email}}</p>
+	    <p >{{address}}</p>
+	    <p >{{house}}</p>
+	    <p >{{pay}}</p>
+	    <p >{{Gender}}</p>        
+	    <p >{{checkbox1}}</p>
+	    <p >{{checkbox2}}</p>
+	    <p >{{checkbox3}}</p>
+	  </div>
+	  <!--button
+	      type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info
+	      </button!-->    
 	</section>
       </section>
     </main>
-
-      <footer>
-	<p>Copyright 2020: Not Really, though</p>
-      </footer>
-    </body>
+    
+    <footer>
+      <p>Copyright 2020: Not Really, though</p>
+    </footer>
+  </body>
 </html>
