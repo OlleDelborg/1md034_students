@@ -1,5 +1,3 @@
-
-
 window.onload = function () {
 'use strict';
 const socket = io();
@@ -11,7 +9,7 @@ const socket = io();
 	    info1: [burgers[0].gluten, burgers[0].lactose, burgers[0].kCal]
 	}
     });
-
+    
     const vm2 = new Vue({
 	el: '#sndBurger',
 	data: {
@@ -37,7 +35,6 @@ const socket = io();
 	    
 	},
     });
-
     
     const order = new Vue({
 	el: '#orders',
@@ -45,13 +42,12 @@ const socket = io();
             
 	    name: '',
 	    email: '',
-	    address: '',
-	    house: '',
 	    pay: '',
 	    Gender: '',
 	    checkbox1: "",
 	    checkbox2: "",
-	    checkbox3: ""
+	    checkbox3: "",
+	    cnt: 0
 	},
 
 	methods: {
@@ -62,78 +58,79 @@ const socket = io();
 		order.Gender = genders.gender;
 
 		if(document.getElementById("checkbox1").checked) {
-		    order.checkbox1 = "burger1";
+		    order.checkbox1 = "ELD ham";
 		}
 		
 		else {order.checkbox1 = "";}
 		
 		if(document.getElementById("checkbox2").checked) {
-		    order.checkbox2 = "burger2";
+		    order.checkbox2 = "KALKON ham";
 		}
 		
 		else {order.checkbox2 = "";}
 		
 		if(document.getElementById("checkbox3").checked) {
-		    order.checkbox3 = "burger3";
+		    order.checkbox3 = "double w/ CHEESE";
 		}
 		
 		else {order.checkbox3 = "";}
 		
-	    }
-	}
+	    },
+	    getNext: function () {
+		this.cnt++;
+		return this.cnt;
+	    },
+	    
+	    addOrder: function (event) {
+		socket.emit("addOrder", {
+		    orderId: this.getNext(),
+		    details: {
+			x: dot.display.x,
+			y: dot.display.y},
+		    orderItems: [order.checkbox1,
+				 order.checkbox2,
+				 order.checkbox3],
+		    customer: [order.name,
+			       order.Gender,
+			       order.email],
+		});
+	    },
+	},
     });
 
     const dot = new Vue({
 	el: '#dots',
 	data: {
 	    orders: {},
+	    display: {x:0, y:0},
 	},
-	created: function() {
-	    /* When the page is loaded, get the current orders stored on the server.
-	     * (the server's code is in app.js) */
-	    socket.on('initialize', function(data) {
+	created: function () {
+	    socket.on('initialize', function (data) {
 		this.orders = data.orders;
 	    }.bind(this));
 
-	    /* Whenever an addOrder is emitted by a client (every open map.html is
-	     * a client), the server responds with a currentQueue message (this is
-	     * defined in app.js). The message's data payload is the entire updated
-	     * order object. Here we define what the client should do with it.
-	     * Spoiler: We replace the current local order object with the new one. */
-	    socket.on('currentQueue', function(data) {
+	    socket.on('currentQueue', function (data) {
 		this.orders = data.orders;
 	    }.bind(this));
-	},   
+	},
 	methods: {
-	    getNext: function() {
-		/* This function returns the next available key (order number) in
-		 * the orders object, it works under the assumptions that all keys
-		 * are integers. */
-		let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
-		    return Math.max(last, next);
-		}, 0);
-		return lastOrder + 1;
-	    },
-	    addOrder: function(event) {
-		/* When you click in the map, a click event object is sent as parameter
-		 * to the function designated in v-on:click (i.e. this one).
-		 * The click event object contains among other things different
-		 * coordinates that we need when calculating where in the map the click
-		 * actually happened. */
+	    displayOrder: function(event) {
 		let offset = {
 		    x: event.currentTarget.getBoundingClientRect().left,
 		    y: event.currentTarget.getBoundingClientRect().top,
 		};
-		socket.emit('addOrder', {
-		    orderId: this.getNext(),
-		    details: {
-			x: event.clientX - 10 - offset.x,
-			y: event.clientY - 10 - offset.y,
-		    },
-		    orderItems: ['Beans', 'Curry'],
-		});
+		this.display = {x:event.clientX - 10 - offset.x,
+				y:event.clientY - 10 - offset.y};
 	    },
 	},
     });
 }
+
+
+
+
+
+
+
+			
 

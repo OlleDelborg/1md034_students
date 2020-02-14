@@ -21,101 +21,53 @@
       <section id="burgers">
 
 	<div id="myID">
-	  <h1>{{IDItem}}</h1>
+	  <h1>Welcome friend, Have a Steamed HAM</h1>
 	</div>
 
 	<ol id="myloop">
 	</ol>
 	
-	<h2>Select your Steamed Ham</h2>
+	<h2>Here is our lovely selection!</h2>
 	
-	  <div class="wrapper" id="wrapper">
-	    
-	    <div id="fstBurger" class="box a">
-	      <h2>{{Name1}}</h2>
-	      <img class="pictures" v-bind:src="picture1" width="300">
-	      <ul id="infoBurger1">
-		<li v-for="item1 in info1">
-		  {{item1}}
-		</li>
-	      </ul>
-	      <input type="checkbox" id="checkbox1">
-	      <label for="burgers1">Check it!</label>
-	    </div>
-	    
-	    
-	    <div id="sndBurger" class="box b">
-	      <h2>{{Name2}}</h2>
-	      <img class="pictures" v-bind:src="picture2" width="300">
-	      <ul id="infoBurger2">
-		<li v-for="item2 in info2">
-		  {{item2}}
-		</li>
-	      </ul>
-	      <input type="checkbox" id="checkbox2">
-	      <label for="burgers2">Check it!</label>
-	    </div>
-
-	    <div id="trdBurger" class="box c">
-	      <h2>{{Name3}}</h2>
-	      <img class="pictures" v-bind:src="picture3" width="300">
-	      <ul id="infoBurger3">
-		<li v-for="item3 in info3">
-		  {{item3}}
-		</li>
-	      </ul>
-	      <input type="checkbox" id="checkbox3">
-	      <label for="burgers3">Check it!</label>
-	    </div>
-	    
+	<div class="wrapper" id="wrapper">
+	  
+	  <div id="fstBurger" class="box a">
+	    <h2>{{Name1}}</h2>
+	    <img class="pictures" v-bind:src="picture1" width="300">
+	    <ul id="infoBurger1">
+	      <li v-for="item1 in info1">
+		{{item1}}
+	      </li>
+	    </ul>
+	    <input type="checkbox" id="checkbox1">
+	    <label for="burgers1">Check it!</label>
+	  </div>
+	  
+	  
+	  <div id="sndBurger" class="box b">
+	    <h2>{{Name2}}</h2>
+	    <img class="pictures" v-bind:src="picture2" width="300">
+	    <ul id="infoBurger2">
+	      <li v-for="item2 in info2">
+		{{item2}}
+	      </li>
+	    </ul>
+	    <input type="checkbox" id="checkbox2">
+	    <label for="burgers2">Check it!</label>
 	  </div>
 
-	  
-	  <!--div class="wrapper">
-	      <div class="a">
-		<h2>FIRE ham</h2>
-		<img class "pictures" src="https://images6.alphacoders.com/883/883558.jpg" alt="FIRE" title="fireburger" width="300">
-		<ul class="ingredients">
-		  <li>773 kcal</li>
-		  <div class="allergy">
-		    <li><span id="allergies">Vegan</span></li>
-		    <li><span id="allergies">Gluten</span> free</li>
-		  </div>
-		  <li>Sun dried tomatoes</li>
-		  <li>Onions (non-optional)</li>
-		  <li>Contains actual fire from hell</li>
-		</ul>
-	      </div>
-
-	      <div class="b">
-		<h2>TURKEY ham</h2>
-		<img class "pictures" src="https://img1.southernliving.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/07/main/ranch_turkey_burgers_2525701_hiaha_0086.jpg?itok=sfDFAJMw" alt="TURKEY" title="turkeyham" width="300">
-		<ul class="ingredients">
-		  <li>729 kcal</li>
-		  <li>NO ONIONS</li>
-		  <div class="allergy">
-		    <li><span id="allergies">Gluten</span> free</li>
-		  </div>
-		  <li>Contains actual turkey from hell</li>	  
-		</ul>
-	      </div>
-
-	      <div class="c">
-		<h2>double w/ CHEESE</h2>
-		<img class "pictures" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/lotus-burger-lead.jpg" alt="Span" title="Cheese" width="300">
-		<ul class="ingredients">
-		  <li>995 kcal</li>
-		  <li>Meat from homegrown cows</li>
-		  <div class="allergy">
-		    <li><span id="allergies">Gluten PACKED</span></li>
-		  </div>
-		  <li>Fire dried tomatoes</li>
-		  <li>Onions (optional)</li>
-		  <li>Contains actual cheese from hell</li>
-		</ul>
-	      </div>
-	</div!-->
-	  
+	  <div id="trdBurger" class="box c">
+	    <h2>{{Name3}}</h2>
+	    <img class="pictures" v-bind:src="picture3" width="300">
+	    <ul id="infoBurger3">
+	      <li v-for="item3 in info3">
+		{{item3}}
+	      </li>
+	    </ul>
+	    <input type="checkbox" id="checkbox3">
+	    <label for="burgers3">Check it!</label>
+	  </div>
+	</div>	  
       </section>
       
       <section * id="customer">
@@ -126,13 +78,10 @@
 	      <label for="name">Full Name</label><br>
 	      <input v-model="name" type="text" id="name" name="fn" required="required" placeholder="Name" />
 	    </p>
-	    
 	    <p>
 	      <label for="emailaddress">E-mail</label><br>
 	      <input v-model="email" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
-	    </p>
-
-	    
+	    </p>    
 	  </form>
 	</section>
 	<section>
@@ -164,34 +113,39 @@
 	      Rather not Specify
 	    </label>
 	  </div>
+	  
 	</section>
 
+	<h3> Click in the map! </h3>
+	<a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
 	<div class="view-box">
-	  <div id="dots" v-on:click="addOrder">
-	    <div 
-	      v-for="(order, key) in orders"
-	      v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-	      {{key}}
+	  <div id="dots" v-on:click="displayOrder">
+            <div
+              v-bind:style="{ left: display.x + 'px', top: display.y + 'px'}">
+              {{"T"}}
+            </div>
+	  </div>
+	</div>
+	  
+	  
+	  <section>
+
+	    <div id="orders">  
+	      <button v-on:click="markDone();addOrder()" id="ordering" type="submit">Klart</button>
+	      <h1>Order Information</h1>
+	      <p >{{name}}</p>
+	      <p >{{email}}</p>
+	      <p >{{pay}}</p>
+	      <p >{{Gender}}</p>        
+	      <h1>Order Summary</h1>
+	      <p >{{checkbox1}}</p>
+	      <p >{{checkbox2}}</p>
+	      <p >{{checkbox3}}</p>
 	    </div>
-	  </div>
-
-	
-	<section>
-
-	  <div id="orders">  
-	    <button v-on:click="markDone()" id="ordering" type="submit">Klart</button>
-	    <p >{{name}}</p>
-	    <p >{{email}}</p>
-	    <p >{{pay}}</p>
-	    <p >{{Gender}}</p>        
-	    <p >{{checkbox1}}</p>
-	    <p >{{checkbox2}}</p>
-	    <p >{{checkbox3}}</p>
-	  </div>
-	  <!--button
-	      type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info
-	      </button!-->    
-	</section>
+	    <!--button
+		type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info
+		</button!-->    
+	  </section>
       </section>
     </main>
     
