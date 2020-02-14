@@ -5,6 +5,7 @@
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
     <title>Steamed Hams</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -125,21 +126,12 @@
 	      <label for="name">Full Name</label><br>
 	      <input v-model="name" type="text" id="name" name="fn" required="required" placeholder="Name" />
 	    </p>
-
-	    <p>
-	      <label for="streetaddress">Delivery Address</label><br>
-	      <input v-model="address" type="text" id="address" name="ln" required="required" placeholder="Street name" />
-	    </p>
-
-	    <p>
-	      <label for="House number">House</label><br>
-	      <input v-model="house" type="text" id="house" name="ln" required="required" placeholder="House number" />
-	    </p>
 	    
 	    <p>
 	      <label for="emailaddress">E-mail</label><br>
 	      <input v-model="email" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
 	    </p>
+
 	    
 	  </form>
 	</section>
@@ -174,14 +166,22 @@
 	  </div>
 	</section>
 
+	<div class="view-box">
+	  <div id="dots" v-on:click="addOrder">
+	    <div 
+	      v-for="(order, key) in orders"
+	      v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+	      {{key}}
+	    </div>
+	  </div>
+
+	
 	<section>
 
 	  <div id="orders">  
 	    <button v-on:click="markDone()" id="ordering" type="submit">Klart</button>
 	    <p >{{name}}</p>
 	    <p >{{email}}</p>
-	    <p >{{address}}</p>
-	    <p >{{house}}</p>
 	    <p >{{pay}}</p>
 	    <p >{{Gender}}</p>        
 	    <p >{{checkbox1}}</p>
